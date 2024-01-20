@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Repo.css">
+</head>
+
+<body class="dark-mode">
+    <div id="profile-container">
+        <div id="profile">
+            <img id="profile-image" src="" alt="Profile Picture">
+            <div id="user-info"></div>
+            <button id="dark-mode-btn" onclick="toggleDarkMode()">Light Mode</button>
+            <br><br>
+            <label for="reposPerPage">Repos Per Page:</label>
+            <select id="reposPerPage" class="form-control" onchange="changeReposPerPage()">
+                <option value="2">2</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+            <br>
+            <label for="repoSearch">Search Repositories:</label><br>
+            <input type="text" id="repoSearch"  oninput="filterRepos()" placeholder="search">
+        </div>
+        <!-- <div id="repos"></div> -->
+        <div class="row" id="repos">
+
+        </div>
+        <div id="loading-spinner" class="loading-overlay">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+            <div class="loading-text">Loading...</div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./Repo.js"></script>
+
+</body>
+
+</html>
